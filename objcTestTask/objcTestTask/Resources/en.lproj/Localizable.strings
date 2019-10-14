@@ -1,0 +1,11 @@
+/* 
+  Login.strings
+  objcTestTask
+
+  Created by Iskander Foatov on 14.10.2019.
+  Copyright © 2019 Iskander Foatov. All rights reserved.
+*/
+
+"login.username.placeholder" = "Enter username";
+"login.password.placeholder" = "Enter password";
+"login.login.button.title" = "LogIn";
