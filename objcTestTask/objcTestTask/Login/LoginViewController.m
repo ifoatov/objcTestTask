@@ -17,6 +17,8 @@
 
 @implementation LoginViewController
 
+@synthesize presentor;
+
 - (void)loadView {
     LoginView *myView = [[LoginView alloc] initWithFrame:CGRectZero];
     self.view = myView;
@@ -32,6 +34,9 @@
                                              selector:@selector(keyboardAppearWith:)
                                                  name:UIKeyboardDidChangeFrameNotification
                                                object:nil];
+    [self.loginView.loginButton addTarget:self
+                                   action:@selector(login)
+                         forControlEvents:UIControlEventTouchDown];
 }
 
 - (LoginView *) loginView {
@@ -46,6 +51,16 @@
     CGRect keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
     [self.loginView keyboardUpdateWith:keyboardRect.size];
+}
+
+- (void)showErrorMessage:(NSString *)message {
+    [self.loginView setErrorMessage:message];
+}
+
+- (void)login {
+    NSString *userName = self.loginView.userNameTextField.text;
+    NSString *password = self.loginView.passwordTextField.text;
+    [self.presentor loginWith:userName password:password];
 }
 
 @end

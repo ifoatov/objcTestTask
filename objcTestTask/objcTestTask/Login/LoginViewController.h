@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LoginPresentor.h"
+#import "LoginViewProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController<LoginViewProtocol>
 
 @end
 

@@ -10,12 +10,17 @@
 		F45D58B73C474F6335E35BA1 /* Pods_objcTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4257FE3E88564577268A8E2C /* Pods_objcTestTask.framework */; };
 		F8650B772354DA7F00A098C8 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8650B762354DA7F00A098C8 /* Constants.m */; };
 		F8650B7B2354E3A900A098C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8650B7D2354E3A900A098C8 /* Localizable.strings */; };
+		F8650B832354F22400A098C8 /* FakeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F8650B822354F22400A098C8 /* FakeDataProvider.m */; };
+		F86CCD6F23566734005C3989 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F86CCD6E23566734005C3989 /* AppCoordinator.m */; };
 		F8C869402354D19600561457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C8693F2354D19600561457 /* AppDelegate.m */; };
 		F8C8694B2354D19700561457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C8694A2354D19700561457 /* Assets.xcassets */; };
 		F8C8694E2354D19700561457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C8694C2354D19700561457 /* LaunchScreen.storyboard */; };
 		F8C869512354D19700561457 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C869502354D19700561457 /* main.m */; };
 		F8C8695A2354D43800561457 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C869592354D43800561457 /* LoginViewController.m */; };
 		F8C8695D2354D44600561457 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C8695C2354D44600561457 /* LoginView.m */; };
+		F8FFCC2A2355136F003AC535 /* NetworkLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FFCC292355136F003AC535 /* NetworkLayer.m */; };
+		F8FFCC2D235518D4003AC535 /* LoginInteractor.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FFCC2C235518D4003AC535 /* LoginInteractor.m */; };
+		F8FFCC30235518E5003AC535 /* LoginPresentor.m in Sources */ = {isa = PBXBuildFile; fileRef = F8FFCC2F235518E5003AC535 /* LoginPresentor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -39,6 +44,11 @@
 		F8650B762354DA7F00A098C8 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		F8650B7C2354E3A900A098C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		F8650B7F2354E44800A098C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F8650B812354F14800A098C8 /* DataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataProvider.h; sourceTree = "<group>"; };
+		F8650B822354F22400A098C8 /* FakeDataProvider.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeDataProvider.m; sourceTree = "<group>"; };
+		F8650B842354F23200A098C8 /* FakeDataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeDataProvider.h; sourceTree = "<group>"; };
+		F86CCD6D23566734005C3989 /* AppCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCoordinator.h; sourceTree = "<group>"; };
+		F86CCD6E23566734005C3989 /* AppCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCoordinator.m; sourceTree = "<group>"; };
 		F8C8693B2354D19600561457 /* objcTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = objcTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C8693E2354D19600561457 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8C8693F2354D19600561457 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -49,6 +59,14 @@
 		F8C869592354D43800561457 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F8C8695B2354D44600561457 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		F8C8695C2354D44600561457 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
+		F8FFCC25235512A8003AC535 /* NetworkLayerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkLayerProtocol.h; sourceTree = "<group>"; };
+		F8FFCC2823551361003AC535 /* NetworkLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkLayer.h; sourceTree = "<group>"; };
+		F8FFCC292355136F003AC535 /* NetworkLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NetworkLayer.m; sourceTree = "<group>"; };
+		F8FFCC2B235518D4003AC535 /* LoginInteractor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginInteractor.h; sourceTree = "<group>"; };
+		F8FFCC2C235518D4003AC535 /* LoginInteractor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginInteractor.m; sourceTree = "<group>"; };
+		F8FFCC2E235518E5003AC535 /* LoginPresentor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginPresentor.h; sourceTree = "<group>"; };
+		F8FFCC2F235518E5003AC535 /* LoginPresentor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginPresentor.m; sourceTree = "<group>"; };
+		F8FFCC3123551C62003AC535 /* LoginViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +115,25 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		F8650B802354F13400A098C8 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				F8650B812354F14800A098C8 /* DataProvider.h */,
+				F8650B842354F23200A098C8 /* FakeDataProvider.h */,
+				F8650B822354F22400A098C8 /* FakeDataProvider.m */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		F86CCD6C2356671F005C3989 /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				F86CCD6D23566734005C3989 /* AppCoordinator.h */,
+				F86CCD6E23566734005C3989 /* AppCoordinator.m */,
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
 		F8C869322354D19600561457 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +155,9 @@
 		F8C8693D2354D19600561457 /* objcTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				F86CCD6C2356671F005C3989 /* Coordinators */,
+				F8FFCC242355128B003AC535 /* NetworkLayer */,
+				F8650B802354F13400A098C8 /* DataProvider */,
 				F8650B782354DB7500A098C8 /* Resources */,
 				F8650B742354DA3F00A098C8 /* Common */,
 				F8C869572354D42500561457 /* Login */,
@@ -138,8 +178,23 @@
 				F8C869592354D43800561457 /* LoginViewController.m */,
 				F8C8695B2354D44600561457 /* LoginView.h */,
 				F8C8695C2354D44600561457 /* LoginView.m */,
+				F8FFCC2B235518D4003AC535 /* LoginInteractor.h */,
+				F8FFCC2C235518D4003AC535 /* LoginInteractor.m */,
+				F8FFCC2E235518E5003AC535 /* LoginPresentor.h */,
+				F8FFCC2F235518E5003AC535 /* LoginPresentor.m */,
+				F8FFCC3123551C62003AC535 /* LoginViewProtocol.h */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		F8FFCC242355128B003AC535 /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				F8FFCC25235512A8003AC535 /* NetworkLayerProtocol.h */,
+				F8FFCC2823551361003AC535 /* NetworkLayer.h */,
+				F8FFCC292355136F003AC535 /* NetworkLayer.m */,
+			);
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,11 +312,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8FFCC2D235518D4003AC535 /* LoginInteractor.m in Sources */,
 				F8650B772354DA7F00A098C8 /* Constants.m in Sources */,
+				F86CCD6F23566734005C3989 /* AppCoordinator.m in Sources */,
+				F8650B832354F22400A098C8 /* FakeDataProvider.m in Sources */,
 				F8C869402354D19600561457 /* AppDelegate.m in Sources */,
 				F8C869512354D19700561457 /* main.m in Sources */,
 				F8C8695A2354D43800561457 /* LoginViewController.m in Sources */,
 				F8C8695D2354D44600561457 /* LoginView.m in Sources */,
+				F8FFCC30235518E5003AC535 /* LoginPresentor.m in Sources */,
+				F8FFCC2A2355136F003AC535 /* NetworkLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

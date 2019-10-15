@@ -7,22 +7,22 @@
 //
 
 #import "AppDelegate.h"
-#import "LoginViewController.h"
+#import "AppCoordinator.h"
+#import "FakeDataProvider.h"
+#import "NetworkLayer.h"
 
 @interface AppDelegate ()
 
-@property (nonatomic, readwrite, strong) UIWindow *mainWindow;
+@property(nonatomic, strong) AppCoordinator *coordinator;
 
 @end
 
 @implementation AppDelegate
 
-
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    _mainWindow = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
-    _mainWindow.rootViewController = [[LoginViewController alloc] init];
-    [_mainWindow makeKeyAndVisible];
+    self.coordinator = [[AppCoordinator alloc] initWith:[[FakeDataProvider alloc] initWith:NSUserDefaults.standardUserDefaults]
+                                           networkLayer:[NetworkLayer new]];
+    [self.coordinator start];
     return YES;
 }
 
