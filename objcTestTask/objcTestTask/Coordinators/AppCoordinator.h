@@ -12,6 +12,8 @@
 
 @protocol Coordinator <NSObject>
 
+@property (nonatomic, readonly) NSString *identificator;
+
 - (void)start;
 
 @end

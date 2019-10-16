@@ -17,7 +17,7 @@
 }
 
 - (void)loginWith:(NSString *)userName password:(NSString *)password completion:(LoginCallback) completion {
-    NSString *urlString = [NSString stringWithFormat:@"http://www.alarstudios.com/test/auth.cgi?%@&%@", userName, password];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.alarstudios.com/test/auth.cgi?username=%@&password=%@", userName, password];
     [[NSURLSession.sharedSession dataTaskWithURL:[NSURL URLWithString:urlString]
                                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (completion) {
@@ -27,7 +27,7 @@
 }
 
 - (void)loadPageWithCount:(NSUInteger)page code:(nonnull NSString *)code completion:(nonnull PageLooadingCallback)completion {
-    NSString *urlString = [NSString stringWithFormat:@"http://www.alarstudios.com/test/data.cgi?%lu&%@", (unsigned long)page, code];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.alarstudios.com/test/data.cgi?page=%lu&code=%@", (unsigned long)page, code];
     [[NSURLSession.sharedSession dataTaskWithURL:[NSURL URLWithString:urlString]
                                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (completion) {

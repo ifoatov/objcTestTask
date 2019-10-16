@@ -7,4 +7,5 @@ target 'objcTestTask' do
 
   # Pods for objcTestTask
   pod 'Masonry'
+  pod 'ReactiveObjC'
 end

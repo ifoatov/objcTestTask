@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		F45D58B73C474F6335E35BA1 /* Pods_objcTestTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4257FE3E88564577268A8E2C /* Pods_objcTestTask.framework */; };
+		F839199C2356FC6000EFDE86 /* ListCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F839199B2356FC6000EFDE86 /* ListCoordinator.m */; };
+		F83919A12357011A00EFDE86 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F83919A02357011A00EFDE86 /* ListViewController.m */; };
+		F83919A42357014400EFDE86 /* ListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F83919A32357014400EFDE86 /* ListViewModel.m */; };
+		F83919A82357045700EFDE86 /* Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = F83919A72357045700EFDE86 /* Entity.m */; };
+		F83919AB23570AEA00EFDE86 /* EntityFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = F83919AA23570AEA00EFDE86 /* EntityFactory.m */; };
 		F8650B772354DA7F00A098C8 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = F8650B762354DA7F00A098C8 /* Constants.m */; };
 		F8650B7B2354E3A900A098C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8650B7D2354E3A900A098C8 /* Localizable.strings */; };
 		F8650B832354F22400A098C8 /* FakeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F8650B822354F22400A098C8 /* FakeDataProvider.m */; };
@@ -40,6 +45,17 @@
 		00D15519293C7839BCEB9B10 /* Pods-objcTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objcTestTask.debug.xcconfig"; path = "Target Support Files/Pods-objcTestTask/Pods-objcTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		4257FE3E88564577268A8E2C /* Pods_objcTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objcTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7E9A6337C3F1A59AA60F4D /* Pods-objcTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objcTestTask.release.xcconfig"; path = "Target Support Files/Pods-objcTestTask/Pods-objcTestTask.release.xcconfig"; sourceTree = "<group>"; };
+		F839199A2356FC6000EFDE86 /* ListCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListCoordinator.h; sourceTree = "<group>"; };
+		F839199B2356FC6000EFDE86 /* ListCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCoordinator.m; sourceTree = "<group>"; };
+		F839199F2357011A00EFDE86 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
+		F83919A02357011A00EFDE86 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
+		F83919A22357014400EFDE86 /* ListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewModel.h; sourceTree = "<group>"; };
+		F83919A32357014400EFDE86 /* ListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewModel.m; sourceTree = "<group>"; };
+		F83919A62357045700EFDE86 /* Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Entity.h; sourceTree = "<group>"; };
+		F83919A72357045700EFDE86 /* Entity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
+		F83919A923570AEA00EFDE86 /* EntityFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityFactory.h; sourceTree = "<group>"; };
+		F83919AA23570AEA00EFDE86 /* EntityFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntityFactory.m; sourceTree = "<group>"; };
+		F83919AC23570F7400EFDE86 /* Entity+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Entity+Private.h"; sourceTree = "<group>"; };
 		F8650B752354DA6300A098C8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F8650B762354DA7F00A098C8 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		F8650B7C2354E3A900A098C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -98,6 +114,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F839199D235700F100EFDE86 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				F839199E235700FF00EFDE86 /* List */,
+				F8C869572354D42500561457 /* Login */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		F839199E235700FF00EFDE86 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				F839199F2357011A00EFDE86 /* ListViewController.h */,
+				F83919A02357011A00EFDE86 /* ListViewController.m */,
+				F83919A22357014400EFDE86 /* ListViewModel.h */,
+				F83919A32357014400EFDE86 /* ListViewModel.m */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		F83919A52357028900EFDE86 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F83919A62357045700EFDE86 /* Entity.h */,
+				F83919AC23570F7400EFDE86 /* Entity+Private.h */,
+				F83919A72357045700EFDE86 /* Entity.m */,
+				F83919A923570AEA00EFDE86 /* EntityFactory.h */,
+				F83919AA23570AEA00EFDE86 /* EntityFactory.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		F8650B742354DA3F00A098C8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +178,8 @@
 			children = (
 				F86CCD6D23566734005C3989 /* AppCoordinator.h */,
 				F86CCD6E23566734005C3989 /* AppCoordinator.m */,
+				F839199A2356FC6000EFDE86 /* ListCoordinator.h */,
+				F839199B2356FC6000EFDE86 /* ListCoordinator.m */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -155,12 +205,13 @@
 		F8C8693D2354D19600561457 /* objcTestTask */ = {
 			isa = PBXGroup;
 			children = (
+				F83919A52357028900EFDE86 /* Entities */,
+				F839199D235700F100EFDE86 /* Modules */,
 				F86CCD6C2356671F005C3989 /* Coordinators */,
 				F8FFCC242355128B003AC535 /* NetworkLayer */,
 				F8650B802354F13400A098C8 /* DataProvider */,
 				F8650B782354DB7500A098C8 /* Resources */,
 				F8650B742354DA3F00A098C8 /* Common */,
-				F8C869572354D42500561457 /* Login */,
 				F8C8693E2354D19600561457 /* AppDelegate.h */,
 				F8C8693F2354D19600561457 /* AppDelegate.m */,
 				F8C8694A2354D19700561457 /* Assets.xcassets */,
@@ -231,6 +282,7 @@
 				TargetAttributes = {
 					F8C8693A2354D19600561457 = {
 						CreatedOnToolsVersion = 11.0;
+						LastSwiftMigration = 1100;
 					};
 				};
 			};
@@ -312,16 +364,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F83919A82357045700EFDE86 /* Entity.m in Sources */,
 				F8FFCC2D235518D4003AC535 /* LoginInteractor.m in Sources */,
 				F8650B772354DA7F00A098C8 /* Constants.m in Sources */,
+				F83919A12357011A00EFDE86 /* ListViewController.m in Sources */,
 				F86CCD6F23566734005C3989 /* AppCoordinator.m in Sources */,
 				F8650B832354F22400A098C8 /* FakeDataProvider.m in Sources */,
 				F8C869402354D19600561457 /* AppDelegate.m in Sources */,
 				F8C869512354D19700561457 /* main.m in Sources */,
+				F83919AB23570AEA00EFDE86 /* EntityFactory.m in Sources */,
 				F8C8695A2354D43800561457 /* LoginViewController.m in Sources */,
 				F8C8695D2354D44600561457 /* LoginView.m in Sources */,
 				F8FFCC30235518E5003AC535 /* LoginPresentor.m in Sources */,
 				F8FFCC2A2355136F003AC535 /* NetworkLayer.m in Sources */,
+				F83919A42357014400EFDE86 /* ListViewModel.m in Sources */,
+				F839199C2356FC6000EFDE86 /* ListCoordinator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +519,7 @@
 			baseConfigurationReference = 00D15519293C7839BCEB9B10 /* Pods-objcTestTask.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EXB62WLCJ2;
 				INFOPLIST_FILE = objcTestTask/Info.plist;
@@ -472,6 +530,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ifoatov.objcTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -481,6 +541,7 @@
 			baseConfigurationReference = 7F7E9A6337C3F1A59AA60F4D /* Pods-objcTestTask.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = EXB62WLCJ2;
 				INFOPLIST_FILE = objcTestTask/Info.plist;
@@ -491,6 +552,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ifoatov.objcTestTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;

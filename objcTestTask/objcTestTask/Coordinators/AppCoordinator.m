@@ -33,11 +33,16 @@
     return self;
 }
 
+- (NSString *)identificator {
+    return @"AppCoordinator";
+}
+
 - (void)start {
     NSString *code = [self.dataProvider getCode];
-    if (!code
-        && code.length > 0) {
+    if (!code.length) {
         self.mainWindow.rootViewController = self.navController;
+        
+        
     } else {
         LoginViewController *controller = [LoginViewController new];
         LoginPresentor *presentor = [LoginPresentor new];
