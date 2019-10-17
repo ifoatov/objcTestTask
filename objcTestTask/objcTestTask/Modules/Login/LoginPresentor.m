@@ -18,4 +18,8 @@
     [self.view showErrorMessage:@"Invalig login/password"];
 }
 
+- (void)loginedWithCode:(NSString *)code {
+    [self.navigation loginedWith:code];
+}
+
 @end

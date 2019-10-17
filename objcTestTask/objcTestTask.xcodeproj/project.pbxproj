@@ -45,6 +45,7 @@
 		00D15519293C7839BCEB9B10 /* Pods-objcTestTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objcTestTask.debug.xcconfig"; path = "Target Support Files/Pods-objcTestTask/Pods-objcTestTask.debug.xcconfig"; sourceTree = "<group>"; };
 		4257FE3E88564577268A8E2C /* Pods_objcTestTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_objcTestTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F7E9A6337C3F1A59AA60F4D /* Pods-objcTestTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-objcTestTask.release.xcconfig"; path = "Target Support Files/Pods-objcTestTask/Pods-objcTestTask.release.xcconfig"; sourceTree = "<group>"; };
+		F835DF8A235849F300D1F36F /* LoginNavigationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginNavigationProtocol.h; sourceTree = "<group>"; };
 		F839199A2356FC6000EFDE86 /* ListCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListCoordinator.h; sourceTree = "<group>"; };
 		F839199B2356FC6000EFDE86 /* ListCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListCoordinator.m; sourceTree = "<group>"; };
 		F839199F2357011A00EFDE86 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 				F8FFCC2E235518E5003AC535 /* LoginPresentor.h */,
 				F8FFCC2F235518E5003AC535 /* LoginPresentor.m */,
 				F8FFCC3123551C62003AC535 /* LoginViewProtocol.h */,
+				F835DF8A235849F300D1F36F /* LoginNavigationProtocol.h */,
 			);
 			path = Login;
 			sourceTree = "<group>";

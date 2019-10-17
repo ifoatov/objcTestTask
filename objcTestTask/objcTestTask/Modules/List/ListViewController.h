@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ListViewModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ListViewController : UIViewController
+
+@property (nonatomic, strong) ListViewModel *viewModel;
 
 @end
 

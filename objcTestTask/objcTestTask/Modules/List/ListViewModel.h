@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "NetworkLayerProtocol.h"
-#import "ListViewController.h"
 #import "Entity.h"
+
+@class ListViewController;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "DataProvider.h"
 #import "NetworkLayerProtocol.h"
+#import "LoginNavigationProtocol.h"
 
-@protocol Coordinator <NSObject>
+@protocol Coordinator <NSObject, LoginNavigationProtocol>
 
 @property (nonatomic, readonly) NSString *identificator;
 

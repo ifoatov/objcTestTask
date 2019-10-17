@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LoginInteractor.h"
 #import "LoginViewProtocol.h"
+#import "LoginNavigationProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -16,9 +17,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) LoginInteractor *interactor;
 @property (nonatomic, weak) id<LoginViewProtocol> view;
+@property (nonatomic, weak) id<LoginNavigationProtocol> navigation;
 
 - (void)loginWith:(NSString *) username password:(NSString *)password;
 - (void)showError;
+- (void)loginedWithCode:(NSString *)code;
 
 @end
 

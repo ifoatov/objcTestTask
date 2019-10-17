@@ -9,6 +9,7 @@
 #import "ListViewModel.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import "EntityFactory.h"
+#import "ListViewController.h"
 
 @interface ListViewModel ()
 

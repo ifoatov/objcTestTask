@@ -45,9 +45,11 @@
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
         NSString *code = [json objectForKey:@"code"];
         
-        if (!code
-            && code.length > 0) {
+        if (code.length) {
             [strongSelf.dataProvider setCode:code];
+            dispatch_async(dispatch_get_main_queue(), ^{
+              [strongSelf.presentor loginedWithCode:code];
+            });
         } else {
             dispatch_async(dispatch_get_main_queue(), ^{
               [[weakSelf presentor] showError];

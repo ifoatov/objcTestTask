@@ -10,6 +10,8 @@
 #import "LoginPresentor.h"
 #import "LoginInteractor.h"
 #import "LoginViewController.h"
+#import "ListViewController.h"
+#import "ListViewModel.h"
 
 @interface AppCoordinator ()
 
@@ -38,23 +40,40 @@
 }
 
 - (void)start {
-    NSString *code = [self.dataProvider getCode];
-    if (!code.length) {
-        self.mainWindow.rootViewController = self.navController;
-        
-        
-    } else {
-        LoginViewController *controller = [LoginViewController new];
-        LoginPresentor *presentor = [LoginPresentor new];
-        LoginInteractor *interactor = [[LoginInteractor alloc] initWith:self.networkLayer dataProvider:self.dataProvider];
-        
-        controller.presentor = presentor;
-        presentor.view = controller;
-        presentor.interactor = interactor;
-        interactor.presentor = presentor;
-        self.mainWindow.rootViewController = controller;
-    }
     [self.mainWindow makeKeyAndVisible];
+    NSString *code = [self.dataProvider getCode];
+    if (code.length) {
+        [self presentListStackWith:code];
+    } else {
+        [self presentLoginStack];
+    }
+}
+
+- (void)presentLoginStack {
+    LoginViewController *controller = [LoginViewController new];
+    LoginPresentor *presentor = [LoginPresentor new];
+    LoginInteractor *interactor = [[LoginInteractor alloc] initWith:self.networkLayer dataProvider:self.dataProvider];
+
+    controller.presentor = presentor;
+    presentor.view = controller;
+    presentor.interactor = interactor;
+    presentor.navigation = self;
+    interactor.presentor = presentor;
+    [self.mainWindow setRootViewController:controller];
+}
+
+- (void)presentListStackWith:(NSString *)code {
+    ListViewController *controller = [ListViewController new];
+    ListViewModel *viewModel = [[ListViewModel alloc] initWith:self.networkLayer code:code];
+    controller.viewModel = viewModel;
+    viewModel.view = controller;
+    [self.navController pushViewController:controller animated:false];
+    
+    [self.mainWindow setRootViewController:self.navController];
+}
+
+- (void)loginedWith:(NSString *) code {
+    [self presentListStackWith:code];
 }
 
 @end
