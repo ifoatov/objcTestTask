@@ -51,9 +51,13 @@
     _titleLabel.text = NSLocalizedString(@"login.login.button.title", @"");
     
     _userNameTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    _userNameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    _userNameTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _userNameTextField.placeholder = NSLocalizedString(@"login.username.placeholder", @"");
     
     _passwordTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    _passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
+    _passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _passwordTextField.placeholder = NSLocalizedString(@"login.password.placeholder", @"");
     
     _loginButton = [UIButton buttonWithType:UIButtonTypeSystem];
