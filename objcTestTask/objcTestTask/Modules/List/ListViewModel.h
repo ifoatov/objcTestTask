@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "NetworkLayerProtocol.h"
 #import "Entity.h"
+#import "ListNavigationProtocol.h"
 
 @class ListViewController;
 
@@ -19,8 +20,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) ListViewController *view;
 @property (nonatomic, readonly) BOOL isLoading;
 @property (nonatomic, readonly) NSArray<Entity *> *items;
+@property (nonatomic, weak) id<ListNavigationProtocol> navigation;
 
 - (instancetype)initWith:(id<NetworkLayerProtocol>)networkLayer code:(NSString *)code;
+- (void)modelSelectedWith:(NSInteger)modelId;
+- (void)loadList;
 
 @end
 

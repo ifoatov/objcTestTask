@@ -17,6 +17,9 @@
 		F8650B7B2354E3A900A098C8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F8650B7D2354E3A900A098C8 /* Localizable.strings */; };
 		F8650B832354F22400A098C8 /* FakeDataProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F8650B822354F22400A098C8 /* FakeDataProvider.m */; };
 		F86CCD6F23566734005C3989 /* AppCoordinator.m in Sources */ = {isa = PBXBuildFile; fileRef = F86CCD6E23566734005C3989 /* AppCoordinator.m */; };
+		F8BD773E2358F68D00CA049B /* UITableViewCell+Entity.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BD773D2358F68D00CA049B /* UITableViewCell+Entity.m */; };
+		F8BD77412359050F00CA049B /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8BD77402359050F00CA049B /* Info.storyboard */; };
+		F8BD77442359061D00CA049B /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F8BD77432359061D00CA049B /* InfoViewController.m */; };
 		F8C869402354D19600561457 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F8C8693F2354D19600561457 /* AppDelegate.m */; };
 		F8C8694B2354D19700561457 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8C8694A2354D19700561457 /* Assets.xcassets */; };
 		F8C8694E2354D19700561457 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8C8694C2354D19700561457 /* LaunchScreen.storyboard */; };
@@ -56,7 +59,6 @@
 		F83919A72357045700EFDE86 /* Entity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Entity.m; sourceTree = "<group>"; };
 		F83919A923570AEA00EFDE86 /* EntityFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EntityFactory.h; sourceTree = "<group>"; };
 		F83919AA23570AEA00EFDE86 /* EntityFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EntityFactory.m; sourceTree = "<group>"; };
-		F83919AC23570F7400EFDE86 /* Entity+Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Entity+Private.h"; sourceTree = "<group>"; };
 		F8650B752354DA6300A098C8 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		F8650B762354DA7F00A098C8 /* Constants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		F8650B7C2354E3A900A098C8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -66,6 +68,12 @@
 		F8650B842354F23200A098C8 /* FakeDataProvider.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FakeDataProvider.h; sourceTree = "<group>"; };
 		F86CCD6D23566734005C3989 /* AppCoordinator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppCoordinator.h; sourceTree = "<group>"; };
 		F86CCD6E23566734005C3989 /* AppCoordinator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppCoordinator.m; sourceTree = "<group>"; };
+		F8BD773B2358D4AD00CA049B /* ListNavigationProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListNavigationProtocol.h; sourceTree = "<group>"; };
+		F8BD773C2358F60D00CA049B /* UITableViewCell+Entity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableViewCell+Entity.h"; sourceTree = "<group>"; };
+		F8BD773D2358F68D00CA049B /* UITableViewCell+Entity.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+Entity.m"; sourceTree = "<group>"; };
+		F8BD77402359050F00CA049B /* Info.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		F8BD77422359061D00CA049B /* InfoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		F8BD77432359061D00CA049B /* InfoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		F8C8693B2354D19600561457 /* objcTestTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = objcTestTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8C8693E2354D19600561457 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F8C8693F2354D19600561457 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -118,6 +126,7 @@
 		F839199D235700F100EFDE86 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F8BD773F235904AB00CA049B /* Info */,
 				F839199E235700FF00EFDE86 /* List */,
 				F8C869572354D42500561457 /* Login */,
 			);
@@ -131,6 +140,9 @@
 				F83919A02357011A00EFDE86 /* ListViewController.m */,
 				F83919A22357014400EFDE86 /* ListViewModel.h */,
 				F83919A32357014400EFDE86 /* ListViewModel.m */,
+				F8BD773B2358D4AD00CA049B /* ListNavigationProtocol.h */,
+				F8BD773C2358F60D00CA049B /* UITableViewCell+Entity.h */,
+				F8BD773D2358F68D00CA049B /* UITableViewCell+Entity.m */,
 			);
 			path = List;
 			sourceTree = "<group>";
@@ -139,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				F83919A62357045700EFDE86 /* Entity.h */,
-				F83919AC23570F7400EFDE86 /* Entity+Private.h */,
 				F83919A72357045700EFDE86 /* Entity.m */,
 				F83919A923570AEA00EFDE86 /* EntityFactory.h */,
 				F83919AA23570AEA00EFDE86 /* EntityFactory.m */,
@@ -183,6 +194,16 @@
 				F839199B2356FC6000EFDE86 /* ListCoordinator.m */,
 			);
 			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		F8BD773F235904AB00CA049B /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				F8BD77402359050F00CA049B /* Info.storyboard */,
+				F8BD77422359061D00CA049B /* InfoViewController.h */,
+				F8BD77432359061D00CA049B /* InfoViewController.m */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		F8C869322354D19600561457 = {
@@ -313,6 +334,7 @@
 			files = (
 				F8C8694E2354D19700561457 /* LaunchScreen.storyboard in Resources */,
 				F8650B7B2354E3A900A098C8 /* Localizable.strings in Resources */,
+				F8BD77412359050F00CA049B /* Info.storyboard in Resources */,
 				F8C8694B2354D19700561457 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -369,6 +391,7 @@
 				F83919A82357045700EFDE86 /* Entity.m in Sources */,
 				F8FFCC2D235518D4003AC535 /* LoginInteractor.m in Sources */,
 				F8650B772354DA7F00A098C8 /* Constants.m in Sources */,
+				F8BD77442359061D00CA049B /* InfoViewController.m in Sources */,
 				F83919A12357011A00EFDE86 /* ListViewController.m in Sources */,
 				F86CCD6F23566734005C3989 /* AppCoordinator.m in Sources */,
 				F8650B832354F22400A098C8 /* FakeDataProvider.m in Sources */,
@@ -378,6 +401,7 @@
 				F8C8695A2354D43800561457 /* LoginViewController.m in Sources */,
 				F8C8695D2354D44600561457 /* LoginView.m in Sources */,
 				F8FFCC30235518E5003AC535 /* LoginPresentor.m in Sources */,
+				F8BD773E2358F68D00CA049B /* UITableViewCell+Entity.m in Sources */,
 				F8FFCC2A2355136F003AC535 /* NetworkLayer.m in Sources */,
 				F83919A42357014400EFDE86 /* ListViewModel.m in Sources */,
 				F839199C2356FC6000EFDE86 /* ListCoordinator.m in Sources */,

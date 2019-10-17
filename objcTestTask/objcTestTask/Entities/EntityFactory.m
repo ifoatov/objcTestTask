@@ -7,7 +7,7 @@
 //
 
 #import "EntityFactory.h"
-#import "Entity+Private.h"
+#import "Entity.h"
 
 @implementation EntityFactory
 
@@ -25,7 +25,7 @@
     NSArray<NSDictionary<NSString *, id> *> *items = json[@"data"];
     NSMutableArray<Entity *> *result = [[NSMutableArray alloc] initWithCapacity:items.count];
     for (int i = 0; i < items.count; i++) {
-        Entity *item = [EntityFactory entityFromDictiondary:item];
+        Entity *item = [EntityFactory entityFromDictiondary:items[i]];
         if (item) {
             result[i] = item;
         }

@@ -6,14 +6,16 @@
 //  Copyright © 2019 Iskander Foatov. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
 #import "AppCoordinator.h"
 #import "LoginPresentor.h"
 #import "LoginInteractor.h"
 #import "LoginViewController.h"
 #import "ListViewController.h"
 #import "ListViewModel.h"
+#import "InfoViewController.h"
 
-@interface AppCoordinator ()
+@interface AppCoordinator()
 
 @property (nonatomic, strong) UIWindow *mainWindow;
 @property (nonatomic, strong) UINavigationController *navController;
@@ -67,6 +69,7 @@
     ListViewModel *viewModel = [[ListViewModel alloc] initWith:self.networkLayer code:code];
     controller.viewModel = viewModel;
     viewModel.view = controller;
+    viewModel.navigation = self;
     [self.navController pushViewController:controller animated:false];
     
     [self.mainWindow setRootViewController:self.navController];
@@ -74,6 +77,12 @@
 
 - (void)loginedWith:(NSString *) code {
     [self presentListStackWith:code];
+}
+
+- (void)showInfoWith:(Entity *)entity {
+    InfoViewController *controller = [[UIStoryboard storyboardWithName:@"Info" bundle:nil] instantiateViewControllerWithIdentifier:@"InfoViewController"];
+    controller.entity = entity;
+    [self.navController pushViewController:controller animated:true];
 }
 
 @end

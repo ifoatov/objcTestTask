@@ -10,8 +10,9 @@
 #import "DataProvider.h"
 #import "NetworkLayerProtocol.h"
 #import "LoginNavigationProtocol.h"
+#import "ListNavigationProtocol.h"
 
-@protocol Coordinator <NSObject, LoginNavigationProtocol>
+@protocol Coordinator <NSObject, LoginNavigationProtocol, ListNavigationProtocol>
 
 @property (nonatomic, readonly) NSString *identificator;
 

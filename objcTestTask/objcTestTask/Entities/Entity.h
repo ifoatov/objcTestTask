@@ -12,11 +12,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Entity : NSObject
 
-@property (nonatomic, readonly) NSString *entityId;
-@property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) NSString *country;
-@property (nonatomic, readonly) double lat;
-@property (nonatomic, readonly) double lon;
+@property (nonatomic, strong) NSString *entityId;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSString *country;
+@property (nonatomic, assign) double lat;
+@property (nonatomic, assign) double lon;
 
 @end
 

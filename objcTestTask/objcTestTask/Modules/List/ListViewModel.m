@@ -52,9 +52,13 @@
         self.page += 1;
         NSMutableArray *result = [NSMutableArray arrayWithArray:self.items];
         [result addObjectsFromArray:items];
-        self.items = [result copy];
         self.isLoading = false;
+        self.items = [result copy];
     }];
+}
+
+- (void)modelSelectedWith:(NSInteger)modelId {
+    [self.navigation showInfoWith:self.items[modelId]];
 }
 
 @end
