@@ -50,10 +50,8 @@
         }
         @strongify(self);
         self.page += 1;
-        NSMutableArray *result = [NSMutableArray arrayWithArray:self.items];
-        [result addObjectsFromArray:items];
         self.isLoading = false;
-        self.items = [result copy];
+        self.items = items;
     }];
 }
 

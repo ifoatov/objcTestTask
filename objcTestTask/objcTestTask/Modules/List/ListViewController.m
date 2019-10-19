@@ -16,6 +16,7 @@ NSString *tableViewCellKey = @"listTableCell";
 @interface ListViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray<Entity *> *items;
 
 @end
 
@@ -23,6 +24,7 @@ NSString *tableViewCellKey = @"listTableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.items = [NSMutableArray array];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.tableView registerClass:UITableViewCell.class
            forCellReuseIdentifier:tableViewCellKey];
@@ -35,32 +37,43 @@ NSString *tableViewCellKey = @"listTableCell";
 
 - (void)setupRx {
     @weakify(self)
-    [RACObserve(self.viewModel, items) subscribeNext:^(id  _Nullable x) {
+    [RACObserve(self.viewModel, items) subscribeNext:^(NSArray<Entity *>  *_Nullable newItems) {
+        if (!newItems.count) {
+            return;
+        }
         @strongify(self);
         // TODO use main reactive sheduler like ObserveOn: mainSheduler
         dispatch_async(dispatch_get_main_queue(), ^{
-           [self.tableView reloadData];
+            [self.tableView performBatchUpdates:^{
+                NSUInteger count = self.items.count;
+                [self.items addObjectsFromArray:newItems];
+                NSMutableArray *indexes = [NSMutableArray arrayWithCapacity:newItems.count];
+                for (NSUInteger i = 0; i < newItems.count; i++) {
+                    indexes[i] = [NSIndexPath indexPathForRow:count + i inSection:0];
+                }
+                [self.tableView insertRowsAtIndexPaths:[indexes copy] withRowAnimation:UITableViewRowAnimationRight];
+            } completion:nil];
         });
     }];
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath { 
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:tableViewCellKey];
-    Entity *entity = self.viewModel.items[indexPath.row];
+    Entity *entity = self.items[indexPath.row];
     [cell configureWith:entity];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section { 
-    return self.viewModel.items.count;
+    return self.items.count;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self.viewModel modelSelectedWith:indexPath.row];
+//    [self.viewModel modelSelectedWith:indexPath.row];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row == self.viewModel.items.count - 1) {
+    if (indexPath.row == self.items.count - 1) {
         [self.viewModel loadList];
     }
 }
