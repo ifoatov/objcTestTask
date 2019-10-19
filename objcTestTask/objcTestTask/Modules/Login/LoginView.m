@@ -7,7 +7,6 @@
 //
 
 #import "LoginView.h"
-#import <Masonry/Masonry.h>
 #import "Constants.h"
 
 @interface LoginView()
@@ -17,6 +16,7 @@
 @property (nonatomic, strong) UITextField *passwordTextField;
 @property (nonatomic, strong) UIButton *loginButton;
 @property (nonatomic, strong) UILabel *errorLabel;
+@property (nonatomic, strong) NSLayoutConstraint *loginButtonBottomConstraint;
 
 @end
 
@@ -51,14 +51,17 @@
     _titleLabel.text = NSLocalizedString(@"login.login.button.title", @"");
     
     _userNameTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    _userNameTextField.font = [UIFont systemFontOfSize:20];
     _userNameTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     _userNameTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _userNameTextField.placeholder = NSLocalizedString(@"login.username.placeholder", @"");
     
     _passwordTextField = [[UITextField alloc] initWithFrame:CGRectZero];
+    _passwordTextField.font = [UIFont systemFontOfSize:20];
     _passwordTextField.autocorrectionType = UITextAutocorrectionTypeNo;
     _passwordTextField.autocapitalizationType = UITextAutocapitalizationTypeNone;
     _passwordTextField.placeholder = NSLocalizedString(@"login.password.placeholder", @"");
+    _passwordTextField.secureTextEntry = true;
     
     _loginButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_loginButton setTitle:NSLocalizedString(@"login.login.button.title", @"") forState:UIControlStateNormal];
@@ -73,38 +76,109 @@
 }
 
 - (void)setupConstraints {
-    [_titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.bottom.equalTo(self.userNameTextField.mas_top).inset(Constants.topOffset);
-    }];
+
+    self.translatesAutoresizingMaskIntoConstraints = false;
+    _titleLabel.translatesAutoresizingMaskIntoConstraints = false;
+    _userNameTextField.translatesAutoresizingMaskIntoConstraints = false;
+    _passwordTextField.translatesAutoresizingMaskIntoConstraints = false;
+    _errorLabel.translatesAutoresizingMaskIntoConstraints = false;
+    _loginButton.translatesAutoresizingMaskIntoConstraints = false;
     
-    [_userNameTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.centerY.equalTo(self).offset(Constants.topOffset * -4);
-        make.left.right.equalTo(self).inset(Constants.doubleOffset);
-    }];
+    [NSLayoutConstraint constraintWithItem:_titleLabel
+                                  attribute:NSLayoutAttributeCenterX
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeCenterX
+                                 multiplier:1
+                                   constant:0].active = true;
+    [NSLayoutConstraint constraintWithItem:_titleLabel
+                                 attribute:NSLayoutAttributeBottom
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:_userNameTextField
+                                 attribute:NSLayoutAttributeTop
+                                multiplier:1
+                                  constant:-Constants.topOffset].active = true;
     
-    [_passwordTextField mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.left.right.equalTo(self.userNameTextField);
-        make.top.equalTo(self.userNameTextField.mas_bottom).offset(Constants.doubleOffset);
-    }];
+    [NSLayoutConstraint constraintWithItem:_userNameTextField
+                                 attribute:NSLayoutAttributeCenterY
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeCenterY
+                                multiplier:1
+                                  constant:Constants.topOffset * -4].active = true;
+    [NSLayoutConstraint constraintWithItem:_userNameTextField
+                                 attribute:NSLayoutAttributeLeading
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeLeading
+                                multiplier:1
+                                  constant:Constants.doubleOffset].active = true;
+    [NSLayoutConstraint constraintWithItem:_userNameTextField
+                                 attribute:NSLayoutAttributeTrailing
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeTrailing
+                                multiplier:1
+                                  constant:-Constants.doubleOffset].active = true;
     
-    [_errorLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.passwordTextField.mas_bottom).offset(Constants.doubleOffset);
-        make.centerX.equalTo(self);
-    }];
+    [NSLayoutConstraint constraintWithItem:_passwordTextField
+                                 attribute:NSLayoutAttributeTop
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:_userNameTextField
+                                 attribute:NSLayoutAttributeBottom
+                                multiplier:1
+                                  constant:Constants.doubleOffset].active = true;
+    [NSLayoutConstraint constraintWithItem:_passwordTextField
+                                 attribute:NSLayoutAttributeLeading
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:_userNameTextField
+                                 attribute:NSLayoutAttributeLeading
+                                multiplier:1
+                                  constant:0].active = true;
+    [NSLayoutConstraint constraintWithItem:_passwordTextField
+                                 attribute:NSLayoutAttributeTrailing
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:_userNameTextField
+                                 attribute:NSLayoutAttributeTrailing
+                                multiplier:1
+                                  constant:0].active = true;
     
-    [_loginButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self);
-        make.bottom.equalTo(self).inset(Constants.topOffset);
-    }];
+    [NSLayoutConstraint constraintWithItem:_errorLabel
+                                 attribute:NSLayoutAttributeTop
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:_passwordTextField
+                                 attribute:NSLayoutAttributeBottom
+                                multiplier:1
+                                  constant:Constants.doubleOffset].active = true;
+    [NSLayoutConstraint constraintWithItem:_errorLabel
+                                 attribute:NSLayoutAttributeCenterX
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeCenterX
+                                multiplier:1
+                                  constant:0].active = true;
+    
+    _loginButtonBottomConstraint = [NSLayoutConstraint constraintWithItem:_loginButton
+                                  attribute:NSLayoutAttributeBottom
+                                  relatedBy:NSLayoutRelationEqual
+                                     toItem:self
+                                  attribute:NSLayoutAttributeBottom
+                                 multiplier:1
+                                   constant:-Constants.doubleOffset];
+    _loginButtonBottomConstraint.active = true;
+    [NSLayoutConstraint constraintWithItem:_loginButton
+                                 attribute:NSLayoutAttributeCenterX
+                                 relatedBy:NSLayoutRelationEqual
+                                    toItem:self
+                                 attribute:NSLayoutAttributeCenterX
+                                multiplier:1
+                                  constant:0].active = true;
+     
 }
 
 - (void)keyboardUpdateWith:(CGSize) size {
     CGFloat offset = size.height == 0 ? Constants.topOffset : size.height + Constants.doubleOffset;
-    [_loginButton mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.bottom.equalTo(self).inset(offset);
-    }];
+    self.loginButtonBottomConstraint.constant = -offset;
 }
 
 

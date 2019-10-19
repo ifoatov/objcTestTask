@@ -31,9 +31,13 @@
                                      initWithTarget:self
                                      action:@selector(tapRecognizeWith:)]];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(keyboardAppearWith:)
-                                                 name:UIKeyboardDidChangeFrameNotification
+                                             selector:@selector(keyboardChangeWith:)
+                                                 name:UIKeyboardDidShowNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                            selector:@selector(keyboardChangeWith:)
+                                                name:UIKeyboardDidHideNotification
+                                              object:nil];
     [self.loginView.loginButton addTarget:self
                                    action:@selector(login)
                          forControlEvents:UIControlEventTouchDown];
@@ -47,7 +51,11 @@
     [self.view endEditing:true];
 }
 
-- (void)keyboardAppearWith:(NSNotification *) notification {
+- (void)keyboardChangeWith:(NSNotification *) notification {
+    if (notification.name == UIKeyboardDidHideNotification) {
+        [self.loginView keyboardUpdateWith:CGSizeZero];
+        return;
+    }
     CGRect keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     keyboardRect = [self.view convertRect:keyboardRect fromView:nil];
     [self.loginView keyboardUpdateWith:keyboardRect.size];

@@ -6,6 +6,5 @@ target 'objcTestTask' do
   use_frameworks!
 
   # Pods for objcTestTask
-  pod 'Masonry'
   pod 'ReactiveObjC'
 end
