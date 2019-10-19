@@ -42,6 +42,7 @@
     @weakify(self);
     [self.networkLayer loadPageWithCount:self.page code:self.code completion:^(NSData *data, NSError *error) {
         if (error) {
+            self.isLoading = false;
             return;
         }
         NSArray *items = [EntityFactory entityFromDate:data];
