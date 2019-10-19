@@ -27,7 +27,7 @@
 }
 
 - (void)loadPageWithCount:(NSUInteger)page code:(nonnull NSString *)code completion:(nonnull PageLooadingCallback)completion {
-    NSString *urlString = [NSString stringWithFormat:@"http://www.alarstudios.com/test/data.cgi?page=%lu&code=%@", (unsigned long)page, code];
+    NSString *urlString = [NSString stringWithFormat:@"http://www.alarstudios.com/test/data.cgi?code=%@&p=%lu", code, (unsigned long)page];
     [[NSURLSession.sharedSession dataTaskWithURL:[NSURL URLWithString:urlString]
                                completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (completion) {

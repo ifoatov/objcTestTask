@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *country;
 @property (nonatomic, assign) double lat;
 @property (nonatomic, assign) double lon;
+@property (nonatomic, nullable, strong) UIImage *image;
 
 @end
 

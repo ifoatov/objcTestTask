@@ -45,9 +45,6 @@
             return;
         }
         NSArray *items = [EntityFactory entityFromDate:data];
-        if (!items.count) {
-            return;
-        }
         @strongify(self);
         self.page += 1;
         self.isLoading = false;
