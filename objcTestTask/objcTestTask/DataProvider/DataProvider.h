@@ -10,8 +10,7 @@
 
 @protocol DataProvider <NSObject>
 
-- (NSString *)getCode;
-
-- (void)setCode:(NSString *)code;
+- (nullable NSString *)getCode;
+- (void)setCode:(NSString * _Nullable)code;
 
 @end

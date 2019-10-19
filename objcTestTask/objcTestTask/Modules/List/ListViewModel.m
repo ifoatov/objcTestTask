@@ -52,8 +52,12 @@
     }];
 }
 
-- (void)modelSelectedWith:(NSInteger)modelId {
-    [self.navigation showInfoWith:self.items[modelId]];
+- (void)modelSelectedWith:(Entity *)item {
+    [self.navigation showInfoWith:item];
+}
+
+- (void)logOut {
+    [self.navigation logOut];
 }
 
 @end

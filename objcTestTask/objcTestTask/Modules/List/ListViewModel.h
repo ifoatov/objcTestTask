@@ -23,8 +23,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, weak) id<ListNavigationProtocol> navigation;
 
 - (instancetype)initWith:(id<NetworkLayerProtocol>)networkLayer code:(NSString *)code;
-- (void)modelSelectedWith:(NSInteger)modelId;
+- (void)modelSelectedWith:(Entity *)item;
 - (void)loadList;
+- (void)logOut;
 
 @end
 

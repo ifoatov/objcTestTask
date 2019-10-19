@@ -85,4 +85,9 @@
     [self.navController pushViewController:controller animated:true];
 }
 
+- (void)logOut {
+    [self.dataProvider setCode:nil];
+    [self presentLoginStack];
+}
+
 @end

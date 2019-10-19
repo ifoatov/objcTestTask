@@ -9,3 +9,4 @@
 "login.username.placeholder" = "Enter username";
 "login.password.placeholder" = "Enter password";
 "login.login.button.title" = "LogIn";
+"login.logout.button.title" = "LogOut";

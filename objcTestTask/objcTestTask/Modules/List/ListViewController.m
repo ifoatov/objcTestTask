@@ -24,6 +24,10 @@ NSString *tableViewCellKey = @"listTableCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"login.logout.button.title", nil)
+                                                                              style:UIBarButtonItemStylePlain
+                                                                             target:nil
+                                                                             action:nil];
     self.items = [NSMutableArray array];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     [self.tableView registerClass:UITableViewCell.class
@@ -37,6 +41,11 @@ NSString *tableViewCellKey = @"listTableCell";
 
 - (void)setupRx {
     @weakify(self)
+    [self.navigationItem rightBarButtonItem].rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
+        [[self viewModel] logOut];
+        return [RACSignal empty];
+    }];
+    
     [RACObserve(self.viewModel, items) subscribeNext:^(NSArray<Entity *>  *_Nullable newItems) {
         if (!newItems.count) {
             return;
@@ -69,7 +78,7 @@ NSString *tableViewCellKey = @"listTableCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    [self.viewModel modelSelectedWith:indexPath.row];
+    [self.viewModel modelSelectedWith:self.items[indexPath.row]];
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {

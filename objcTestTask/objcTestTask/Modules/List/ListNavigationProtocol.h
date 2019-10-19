@@ -11,5 +11,6 @@
 @protocol ListNavigationProtocol
 
 - (void)showInfoWith:(Entity *)entity;
+- (void)logOut;
 
 @end
